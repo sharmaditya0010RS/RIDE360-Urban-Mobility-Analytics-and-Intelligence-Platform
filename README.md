@@ -1,11 +1,11 @@
 
-# RIDE360 | Urban Mobility Intelligence Platform
+# RIDE360 | Urban Mobility Analytics & Intelligence Platform
 
 ### From 150,000 Ride Bookings to Actionable Business Intelligence
 
-An end-to-end **Analytics Engineering and Business Intelligence portfolio project** that transforms raw ride-booking records into a structured PostgreSQL data warehouse, reusable SQL analytics, an interactive Streamlit dashboard, and a containerized analytics application.
+An end-to-end **Analytics Engineering and Business Intelligence portfolio project** that transforms raw ride-booking records into a structured PostgreSQL data warehouse, reusable SQL analytics, interactive Streamlit and Power BI reporting, and a containerized analytics application.
 
-**Python • PostgreSQL • SQL • Pandas • Streamlit • Plotly • Docker • GitHub Actions**
+**Python • PostgreSQL 16 • Advanced SQL • Pandas • Power BI • DAX • Streamlit • Plotly • Docker • GitHub Actions**
 
 [![CI](https://github.com/sharmaditya0010RS/Ride360-URBAN-MOBILITY-INTELLIGENCE-PLATFORM/actions/workflows/ci.yml/badge.svg)](https://github.com/sharmaditya0010RS/Ride360-URBAN-MOBILITY-INTELLIGENCE-PLATFORM/actions)
 
@@ -23,7 +23,11 @@ The project addresses five business questions:
 4. How do vehicle categories and locations differ in performance?
 5. Which operational improvements should be prioritized?
 
-The solution combines reproducible data pipelines, analytical SQL, data-quality controls, interactive visualizations, and deployment engineering.
+The solution combines reproducible data pipelines, analytical SQL, data-quality controls, interactive visualizations, executive BI reporting, and deployment engineering.
+
+**Project deliverables:** PostgreSQL analytics warehouse · Streamlit analytics portal · six-page Power BI executive report (user-reported complete) · CEO strategic business report · Docker application · automated CI.
+
+> **Portfolio scope:** RIDE360 is an analytics portfolio project using a historical booking dataset. It is not presented as a live operating company, and its recommendations have not been experimentally validated.
 
 ## Key Business Metrics
 
@@ -34,7 +38,9 @@ The solution combines reproducible data pipelines, analytical SQL, data-quality 
 | Completion rate | 62.0% |
 | Customer cancellations | 10,500 |
 | Driver cancellations | 27,000 |
+| Total cancellations | 37,500 |
 | Total cancellation rate | 25.0% |
+| Driver share of cancellations | 72.0% |
 | Incomplete rides | 9,000 |
 | No driver found | 10,500 |
 | Completed booking value | 47,260,574 |
@@ -54,35 +60,35 @@ These findings identify opportunities for cancellation analysis, capacity planni
 ## Platform Architecture
 
 ```text
-Raw Ride-Booking Dataset
+Historical ride-booking dataset (150,000 records)
+                   |
+                   v
+Python validation + idempotent ingestion + batch reconciliation
+                   |
+                   v
+PostgreSQL 16 warehouse
+   |-- ride360_raw       (lossless source records)
+   |-- ride360_staging   (standardized records)
+   |-- ride360_analytics (SQL business views and marts)
+   |-- ride360_audit     (batch and quality checks)
+                   |
+                   v
+Business metrics + demand / cancellation / vehicle / location views
+                   |
+          +--------+------------------+
+          |                           |
+          v                           v
+16 materialized cache views     Power BI Desktop
+          |                     executive intelligence
+          v                           |
+Streamlit + Plotly portal       Six-page business report
           |
-          v
-Python Data Ingestion
+Dockerized local application
           |
-          v
-PostgreSQL Data Warehouse
-  |-- Raw Layer
-  |-- Staging Layer
-  |-- Analytics Layer
-  |-- Audit Layer
-          |
-          v
-SQL Transformations & Business Marts
-          |
-          v
-16 Materialized Analytics Views
-          |
-          v
-Streamlit + Plotly Dashboard
-          |
-          v
-Dockerized Local Deployment
-          |
-          v
-GitHub Actions CI
+GitHub Actions: lint, selected tests and Docker build
 ```
 
-The platform separates ingestion, transformation, analytical consumption, and quality verification.
+**Architecture note:** Power BI connects to PostgreSQL analytical views; the 16 cached materialized views primarily support the Streamlit analytics access layer. Docker and CI are engineering components, not proof of public hosting.
 
 ## Technology Stack
 
@@ -93,10 +99,11 @@ The platform separates ingestion, transformation, analytical consumption, and qu
 | Transformation | SQL | Reusable business logic and marts |
 | Analytics acceleration | PostgreSQL materialized views | Cached dashboard queries |
 | Visualization | Streamlit, Plotly | Interactive analytical dashboard |
+| Executive BI | Power BI Desktop, Power Query, DAX | Six-page executive reporting and scenario analysis |
 | Testing | Pytest, Ruff | Automated testing and code quality |
 | Deployment | Docker, Docker Compose | Reproducible application environment |
 | CI | GitHub Actions | Automated lint, selected unit tests, Docker build |
-| Planned BI extension | Power BI | Executive reporting and business-impact case study |
+| Business documentation | CEO strategic report | Executive findings, recommendations, technical assessment |
 
 ## Interactive Analytics Dashboard
 
@@ -114,7 +121,54 @@ The Streamlit application provides seven analytical sections:
 
 ### Dashboard Screenshots
 
-Dashboard screenshots will be added to the repository as the presentation layer is finalized.
+The Streamlit interface can be launched locally. Add verified Streamlit screenshots here when committed to the repository.
+
+## Power BI | Executive Intelligence Suite
+
+### Six Pages of Executive and Operational Intelligence
+
+The Power BI report complements the Streamlit analytics portal with an executive-facing narrative and an interactive business improvement scenario. Its six pages were completed according to the project owner's latest update; the actual `.pbix` and exported screenshots have not been independently audited here.
+
+| Page | Executive question | Primary analysis |
+|---|---|---|
+| 01 — Executive Overview | How is the platform performing? | Booking volume, completion, cancellations, completed booking value and monthly trends |
+| 02 — Cancellation Intelligence | Where does service reliability break down? | Driver/customer cancellations, reasons and monthly patterns |
+| 03 — Demand & Capacity | When does demand concentrate? | Hourly demand, weekday-hour heatmap, dayparts and service risk |
+| 04 — Vehicle Performance | Which categories drive demand? | Vehicle mix and monthly vehicle trends |
+| 05 — Location Intelligence | Which locations and routes matter most? | Pickup hotspots, route demand and service outcomes |
+| 06 — Strategy & Recommendations | What should leadership test next? | Priority actions and a hypothetical cancellation-reduction scenario |
+
+**BI techniques:** PostgreSQL import, Power Query type validation, DAX measures, KPI cards, time-series visualizations, matrices with conditional formatting, page navigation and what-if scenario analysis. Aggregated SQL views are handled at their respective grains rather than being indiscriminately joined.
+
+### Power BI Business Findings
+
+- **Completion:** 93,000 of 150,000 booking records completed (**62.0%**).
+- **Cancellations:** 37,500 bookings cancelled (**25.0%**); 27,000 were driver cancellations (**72.0% of cancellations**).
+- **Peak hour:** 18:00, with 12,397 booking records.
+- **Peak month:** July 2024, with 12,897 booking records.
+- **Leading vehicle category:** Auto, with 37,419 bookings.
+- **Leading pickup location:** Khandsa, with 949 bookings.
+- **Completed booking value:** 47,260,574 in dataset units; currency and revenue recognition are unverified.
+
+### Report Assets and Screenshots
+
+Expected local report structure (add actual exported files to GitHub before linking them as downloadable assets):
+
+```text
+reports/powerbi/
+|-- RIDE360_Intelligence.pbix          # Editable report; typically attached to a GitHub Release
+|-- RIDE360_Theme.json                # Executive dark theme
+|-- RIDE360_Executive_Report.pdf      # Exported six-page BI report
+|-- screenshots/
+|   |-- 01_executive_overview.png
+|   |-- 02_cancellation_intelligence.png
+|   |-- 03_demand_capacity.png
+|   |-- 04_vehicle_performance.png
+|   |-- 05_location_intelligence.png
+|   `-- 06_strategy_recommendations.png
+```
+
+**Preview:** Once the screenshots are committed, add the Executive Overview image at the top of this README and link the remaining five pages. The `.pbix` is excluded by the existing Git ignore rules; publish it as a reviewed GitHub Release asset if distribution is appropriate. Power BI Import files may contain embedded data and connection information.
 
 ## Data Engineering and Quality
 
@@ -293,6 +347,7 @@ RIDE360/
 |-- data/                   # Local data directories
 |-- docs/                   # Engineering and deployment docs
 |-- reports/                # Reports and project inventory
+|   |-- powerbi/           # Power BI theme, report exports and screenshots
 |-- scripts/                # Benchmarking and verification
 |-- sql/                    # Warehouse and analytical SQL
 |-- src/ride360/            # Python application package
@@ -305,17 +360,33 @@ RIDE360/
 |-- README.md
 ```
 
-## Business Impact: Scenario Analysis
+## Business Strategy and CEO Recommendations
 
-The observed cancellation rate is **25%**.
+### Evidence-Based Operational Priorities
 
-A hypothetical reduction to **20%**, holding booking volume constant, would imply:
+| Priority | Observed evidence | Recommended management action | Success metric |
+|---|---|---|---|
+| 1 — Driver reliability | 27,000 driver cancellations; 72% of cancellations | Segment driver cancellations by hour, area and category; pilot dispatch or acceptance improvements | Driver cancellation rate |
+| 2 — Peak-period readiness | 18:00 is the highest-volume booking hour | Compare demand with verified supply availability; test targeted capacity changes | Completion rate and no-driver-found rate during pilot hours |
+| 3 — Location operations | Khandsa leads pickup volume at 949 records | Review hotspot fulfillment and service-risk patterns | Location-level completion and service failure rates |
+| 4 — Vehicle mix | Auto leads at 37,419 bookings | Review category-specific demand and operational outcomes | Vehicle-level completion and cancellation rates |
+| 5 — Reporting governance | Historical data across several analytical grains | Set a weekly KPI review with documented definitions and source reconciliation | Data-quality pass rate and consistent KPI reporting |
 
-- Current cancellations: 37,500
-- Scenario cancellations: 30,000
-- Potential reduction: 7,500 cancellations
+### Cancellation-Reduction Scenario — Not an Achieved Result
 
-This is a **planning scenario, not an achieved result**. Actual business impact would require an operational intervention, controlled measurement, and appropriate financial assumptions.
+Holding historical booking volume fixed at **150,000**:
+
+| Metric | Baseline | Hypothetical target |
+|---|---:|---:|
+| Cancellation rate | 25% | 20% |
+| Cancellation count | 37,500 | 30,000 |
+| Potential avoided cancellations | — | **7,500** |
+
+The target is a **5-percentage-point absolute reduction**, or a **20% relative reduction in cancellations**. This is a planning calculation only: no pilot, causal impact, incremental completed rides, revenue uplift or cost savings have been demonstrated.
+
+### CEO Strategic Report
+
+A separate **15-page CEO strategic business and technical report** has been prepared, covering the operating funnel, customer and location intelligence, opportunities, warehouse architecture, testing, deployment and a proposed operational roadmap. Add its final PDF to `reports/` and link it here once committed to the repository. This document is a portfolio briefing, not an audited financial report.
 
 ## Roadmap
 
@@ -326,10 +397,19 @@ This is a **planning scenario, not an achieved result**. Actual business impact 
 - [x] Materialized analytics cache
 - [x] Docker deployment configuration
 - [x] GitHub Actions CI
-- [ ] Power BI executive reporting
-- [ ] Business-impact case study
+- [x] Power BI executive reporting (completed as reported; final file review pending)
+- [x] Business-impact case study and CEO strategic briefing (scenario-based)
 - [ ] Expanded database integration testing in CI
-- [ ] Portfolio screenshots and presentation assets
+- [ ] Verify and publish final Power BI PDF, screenshots and GitHub Release asset
+
+## Power BI and CEO Report Publishing Checklist
+
+1. Confirm the `.pbix` opens and all six pages show correct values.
+2. Export the Power BI PDF and six real screenshots into `reports/powerbi/`.
+3. Verify no sensitive information is included in shared report files.
+4. Commit the theme, PDF and screenshots; attach the `.pbix` to a GitHub Release if appropriate.
+5. Add verified asset links and a real executive dashboard screenshot to this README.
+6. Publish the 15-page CEO PDF in the repository only after confirming the final report version.
 
 ## Engineering Principles
 
@@ -344,8 +424,6 @@ RIDE360 emphasizes:
 ## Author
 
 **Aditya Sharma**
-
-GitHub: [sharmaditya0010RS](https://github.com/sharmaditya0010RS)
 
 ---
 
