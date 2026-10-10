@@ -1,0 +1,40 @@
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: ride360_dashboard
+
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:8501:8501"
+
+    env_file:
+      - .env.dashboard
+
+    environment:
+      DB_HOST: host.docker.internal
+      DB_PORT: "5433"
+      RIDE360_USE_CACHE: "1"
+      PYTHONPATH: /app/src
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    volumes:
+      - ./reports:/app/reports:ro
+      - ./docs:/app/docs:ro
+
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s

@@ -3,24 +3,63 @@ name: RIDE360 CI
 
 on:
   push:
+    branches: [main]
   pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  test:
+  quality:
+    name: Lint and Unit Tests
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
-      - name: Install dependencies
-        run: python -m pip install -e '.[dev]'
+      - name: Install project and dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m pip install -r requirements-dashboard.txt
 
-      - name: Check code quality
-        run: ruff check src tests
+      - name: Ruff lint
+        run: python -m ruff check .
 
-      - name: Run automated tests
-        run: pytest -q
+      - name: Run database-independent tests
+        run: |
+          python -m pytest -q \
+            tests/test_business_rules.py \
+            tests/test_cli.py \
+            tests/test_dashboard_data.py \
+            tests/test_event_rules.py \
+            tests/test_metadata.py \
+            tests/test_phase1.py \
+            tests/test_profiling.py \
+            tests/test_quality.py \
+            tests/test_report_catalog.py
+
+  docker:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build dashboard image
+        run: docker build -t ride360-dashboard:ci .
+
+      - name: Verify image exists
+        run: docker image inspect ride360-dashboard:ci

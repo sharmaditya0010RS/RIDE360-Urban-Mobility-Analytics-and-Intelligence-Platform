@@ -1,0 +1,399 @@
+{
+  "project": "RIDE360",
+  "generated_at_utc": "2026-10-10T07:48:13.724757+00:00",
+  "summary": {
+    "total_reports": 18,
+    "total_documents": 13,
+    "total_datasets": 32,
+    "powerbi_files": 0,
+    "powerbi_dashboard_status": "PLANNED"
+  },
+  "report_formats": {
+    ".csv": 18
+  },
+  "reports": [
+    {
+      "name": "business_rules.csv",
+      "path": "reports/generated/business/business_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.94
+    },
+    {
+      "name": "event_rules.csv",
+      "path": "reports/generated/events/event_rules.csv",
+      "extension": ".csv",
+      "size_kb": 1.51
+    },
+    {
+      "name": "data_dictionary.csv",
+      "path": "reports/generated/metadata/data_dictionary.csv",
+      "extension": ".csv",
+      "size_kb": 1.83
+    },
+    {
+      "name": "kpi_contracts.csv",
+      "path": "reports/generated/metadata/kpi_contracts.csv",
+      "extension": ".csv",
+      "size_kb": 1.14
+    },
+    {
+      "name": "column_profile.csv",
+      "path": "reports/generated/phase1/column_profile.csv",
+      "extension": ".csv",
+      "size_kb": 1.47
+    },
+    {
+      "name": "duplicate_booking_ids.csv",
+      "path": "reports/generated/phase1/duplicate_booking_ids.csv",
+      "extension": ".csv",
+      "size_kb": 341.29
+    },
+    {
+      "name": "numeric_profile.csv",
+      "path": "reports/generated/phase1/numeric_profile.csv",
+      "extension": ".csv",
+      "size_kb": 0.6
+    },
+    {
+      "name": "business_rules.csv",
+      "path": "reports/generated/phase1_final/business/business_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.94
+    },
+    {
+      "name": "event_rules.csv",
+      "path": "reports/generated/phase1_final/events/event_rules.csv",
+      "extension": ".csv",
+      "size_kb": 1.51
+    },
+    {
+      "name": "data_dictionary.csv",
+      "path": "reports/generated/phase1_final/metadata/data_dictionary.csv",
+      "extension": ".csv",
+      "size_kb": 1.83
+    },
+    {
+      "name": "kpi_contracts.csv",
+      "path": "reports/generated/phase1_final/metadata/kpi_contracts.csv",
+      "extension": ".csv",
+      "size_kb": 1.14
+    },
+    {
+      "name": "column_profile.csv",
+      "path": "reports/generated/phase1_final/profiling/column_profile.csv",
+      "extension": ".csv",
+      "size_kb": 1.47
+    },
+    {
+      "name": "duplicate_booking_ids.csv",
+      "path": "reports/generated/phase1_final/profiling/duplicate_booking_ids.csv",
+      "extension": ".csv",
+      "size_kb": 341.29
+    },
+    {
+      "name": "numeric_profile.csv",
+      "path": "reports/generated/phase1_final/profiling/numeric_profile.csv",
+      "extension": ".csv",
+      "size_kb": 0.6
+    },
+    {
+      "name": "duplicate_conflicts.csv",
+      "path": "reports/generated/phase1_final/structural/duplicate_conflicts.csv",
+      "extension": ".csv",
+      "size_kb": 88.42
+    },
+    {
+      "name": "quality_rules.csv",
+      "path": "reports/generated/phase1_final/structural/quality_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.91
+    },
+    {
+      "name": "duplicate_conflicts.csv",
+      "path": "reports/generated/quality/duplicate_conflicts.csv",
+      "extension": ".csv",
+      "size_kb": 88.42
+    },
+    {
+      "name": "quality_rules.csv",
+      "path": "reports/generated/quality/quality_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.91
+    }
+  ],
+  "documents": [
+    {
+      "name": "Analytics Engineering.md",
+      "path": "docs/Analytics Engineering.md",
+      "extension": ".md",
+      "size_kb": 7.11
+    },
+    {
+      "name": "data_contracts.md",
+      "path": "docs/data_contracts.md",
+      "extension": ".md",
+      "size_kb": 3.91
+    },
+    {
+      "name": "Interactive_Analytics_dashboard.md",
+      "path": "docs/Interactive_Analytics_dashboard.md",
+      "extension": ".md",
+      "size_kb": 3.89
+    },
+    {
+      "name": "phase5_start.md",
+      "path": "docs/phase5_start.md",
+      "extension": ".md",
+      "size_kb": 1.04
+    },
+    {
+      "name": "warehouse_architecture.md",
+      "path": "docs/warehouse_architecture.md",
+      "extension": ".md",
+      "size_kb": 10.98
+    },
+    {
+      "name": "INSTALL_PORTAL.txt",
+      "path": "INSTALL_PORTAL.txt",
+      "extension": ".txt",
+      "size_kb": 1.63
+    },
+    {
+      "name": "README_INSTALL.txt",
+      "path": "README_INSTALL.txt",
+      "extension": ".txt",
+      "size_kb": 0.99
+    },
+    {
+      "name": "requirements-dashboard.txt",
+      "path": "requirements-dashboard.txt",
+      "extension": ".txt",
+      "size_kb": 0.1
+    },
+    {
+      "name": "dependency_links.txt",
+      "path": "src/ride360.egg-info/dependency_links.txt",
+      "extension": ".txt",
+      "size_kb": 0.0
+    },
+    {
+      "name": "entry_points.txt",
+      "path": "src/ride360.egg-info/entry_points.txt",
+      "extension": ".txt",
+      "size_kb": 0.04
+    },
+    {
+      "name": "requires.txt",
+      "path": "src/ride360.egg-info/requires.txt",
+      "extension": ".txt",
+      "size_kb": 0.07
+    },
+    {
+      "name": "SOURCES.txt",
+      "path": "src/ride360.egg-info/SOURCES.txt",
+      "extension": ".txt",
+      "size_kb": 0.22
+    },
+    {
+      "name": "top_level.txt",
+      "path": "src/ride360.egg-info/top_level.txt",
+      "extension": ".txt",
+      "size_kb": 0.01
+    }
+  ],
+  "datasets": [
+    {
+      "name": "rideBookings.csv",
+      "path": "data/raw/rideBookings.csv",
+      "extension": ".csv",
+      "size_kb": 24938.52
+    },
+    {
+      "name": "business_rules.csv",
+      "path": "reports/generated/business/business_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.94
+    },
+    {
+      "name": "business_summary.json",
+      "path": "reports/generated/business/business_summary.json",
+      "extension": ".json",
+      "size_kb": 0.47
+    },
+    {
+      "name": "event_rules.csv",
+      "path": "reports/generated/events/event_rules.csv",
+      "extension": ".csv",
+      "size_kb": 1.51
+    },
+    {
+      "name": "event_summary.json",
+      "path": "reports/generated/events/event_summary.json",
+      "extension": ".json",
+      "size_kb": 0.5
+    },
+    {
+      "name": "data_dictionary.csv",
+      "path": "reports/generated/metadata/data_dictionary.csv",
+      "extension": ".csv",
+      "size_kb": 1.83
+    },
+    {
+      "name": "kpi_contracts.csv",
+      "path": "reports/generated/metadata/kpi_contracts.csv",
+      "extension": ".csv",
+      "size_kb": 1.14
+    },
+    {
+      "name": "metadata_summary.json",
+      "path": "reports/generated/metadata/metadata_summary.json",
+      "extension": ".json",
+      "size_kb": 0.86
+    },
+    {
+      "name": "column_profile.csv",
+      "path": "reports/generated/phase1/column_profile.csv",
+      "extension": ".csv",
+      "size_kb": 1.47
+    },
+    {
+      "name": "duplicate_booking_ids.csv",
+      "path": "reports/generated/phase1/duplicate_booking_ids.csv",
+      "extension": ".csv",
+      "size_kb": 341.29
+    },
+    {
+      "name": "numeric_profile.csv",
+      "path": "reports/generated/phase1/numeric_profile.csv",
+      "extension": ".csv",
+      "size_kb": 0.6
+    },
+    {
+      "name": "source_summary.json",
+      "path": "reports/generated/phase1/source_summary.json",
+      "extension": ".json",
+      "size_kb": 0.46
+    },
+    {
+      "name": "business_rules.csv",
+      "path": "reports/generated/phase1_final/business/business_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.94
+    },
+    {
+      "name": "business_summary.json",
+      "path": "reports/generated/phase1_final/business/business_summary.json",
+      "extension": ".json",
+      "size_kb": 0.47
+    },
+    {
+      "name": "event_rules.csv",
+      "path": "reports/generated/phase1_final/events/event_rules.csv",
+      "extension": ".csv",
+      "size_kb": 1.51
+    },
+    {
+      "name": "event_summary.json",
+      "path": "reports/generated/phase1_final/events/event_summary.json",
+      "extension": ".json",
+      "size_kb": 0.5
+    },
+    {
+      "name": "data_dictionary.csv",
+      "path": "reports/generated/phase1_final/metadata/data_dictionary.csv",
+      "extension": ".csv",
+      "size_kb": 1.83
+    },
+    {
+      "name": "kpi_contracts.csv",
+      "path": "reports/generated/phase1_final/metadata/kpi_contracts.csv",
+      "extension": ".csv",
+      "size_kb": 1.14
+    },
+    {
+      "name": "metadata_summary.json",
+      "path": "reports/generated/phase1_final/metadata/metadata_summary.json",
+      "extension": ".json",
+      "size_kb": 0.86
+    },
+    {
+      "name": "phase1_manifest.json",
+      "path": "reports/generated/phase1_final/phase1_manifest.json",
+      "extension": ".json",
+      "size_kb": 1.4
+    },
+    {
+      "name": "column_profile.csv",
+      "path": "reports/generated/phase1_final/profiling/column_profile.csv",
+      "extension": ".csv",
+      "size_kb": 1.47
+    },
+    {
+      "name": "duplicate_booking_ids.csv",
+      "path": "reports/generated/phase1_final/profiling/duplicate_booking_ids.csv",
+      "extension": ".csv",
+      "size_kb": 341.29
+    },
+    {
+      "name": "numeric_profile.csv",
+      "path": "reports/generated/phase1_final/profiling/numeric_profile.csv",
+      "extension": ".csv",
+      "size_kb": 0.6
+    },
+    {
+      "name": "source_summary.json",
+      "path": "reports/generated/phase1_final/profiling/source_summary.json",
+      "extension": ".json",
+      "size_kb": 0.46
+    },
+    {
+      "name": "duplicate_conflicts.csv",
+      "path": "reports/generated/phase1_final/structural/duplicate_conflicts.csv",
+      "extension": ".csv",
+      "size_kb": 88.42
+    },
+    {
+      "name": "quality_rules.csv",
+      "path": "reports/generated/phase1_final/structural/quality_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.91
+    },
+    {
+      "name": "quality_summary.json",
+      "path": "reports/generated/phase1_final/structural/quality_summary.json",
+      "extension": ".json",
+      "size_kb": 0.21
+    },
+    {
+      "name": "duplicate_conflicts.csv",
+      "path": "reports/generated/quality/duplicate_conflicts.csv",
+      "extension": ".csv",
+      "size_kb": 88.42
+    },
+    {
+      "name": "quality_rules.csv",
+      "path": "reports/generated/quality/quality_rules.csv",
+      "extension": ".csv",
+      "size_kb": 0.91
+    },
+    {
+      "name": "quality_summary.json",
+      "path": "reports/generated/quality/quality_summary.json",
+      "extension": ".json",
+      "size_kb": 0.21
+    },
+    {
+      "name": "ingestion_manifest.json",
+      "path": "reports/generated/warehouse/ingestion_manifest.json",
+      "extension": ".json",
+      "size_kb": 0.71
+    },
+    {
+      "name": "validation_report.json",
+      "path": "reports/generated/warehouse/validation_report.json",
+      "extension": ".json",
+      "size_kb": 7.18
+    }
+  ],
+  "powerbi": []
+}

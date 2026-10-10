@@ -13,3 +13,17 @@ data/processed/*
 
 reports/generated/
 *.pbix
+.env.dashboard
+
+# Local secrets
+.env.*
+!.env.example
+
+# Generated artifacts
+reports/generated/
+reports/exports/
+reports/**/*.zip
+
+# Local backups
+dashboard/*_backup.py
+dashboard/*_backup.py
